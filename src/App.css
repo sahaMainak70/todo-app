@@ -228,7 +228,7 @@ input[type="checkbox"]:checked + label {
 
 @media screen and (max-width: 768px) {
   .container {
-    padding-top: 5vh;
+    /* padding-top: 5vh; */
     height: 100vh;
   }
 
