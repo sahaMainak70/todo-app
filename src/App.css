@@ -12,9 +12,8 @@ body {
 .container {
   display: flex;
   justify-content: center;
-  align-items: start;
+  align-items: center;
   height: 100vh;
-  padding-top: 10vh;
   background-color: cornflowerblue;
 }
 
@@ -228,7 +227,6 @@ input[type="checkbox"]:checked + label {
 
 @media screen and (max-width: 768px) {
   .container {
-    /* padding-top: 5vh; */
     height: 100vh;
   }
 
@@ -238,12 +236,12 @@ input[type="checkbox"]:checked + label {
 
   .todo-input {
     width: 70%;
-    border-radius: 0.2vw;
+    border-radius: 1vw;
   }
 
   .todo-button {
     width: 30%;
-    border-radius: 0.2vw;
+    border-radius: 1vw;
   }
 
   .todo-item {
@@ -252,6 +250,7 @@ input[type="checkbox"]:checked + label {
 
   .todo {
     width: 100%;
+    border-radius: 1vw;
   }
 
   .todo p {
@@ -260,6 +259,35 @@ input[type="checkbox"]:checked + label {
 
   .todo-item button {
     width: 20%;
+    border-radius: 1vw;
   }
-  
+
+  label {
+    width: 15px;
+    height: 15px;
+    margin-left: 1vw;
+  }
+
+  label::before {
+    top: 20%;
+    left: 60%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    border-right: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+  }
+
+  @keyframes draw-checkmark {
+    0% {
+      width: 0;
+      height: 0;
+    }
+    40% {
+      width: 7px;
+      height: 0;
+    }
+    100% {
+      width: 7px;
+      height: 15px;
+    }
+  }
 }
