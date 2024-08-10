@@ -225,3 +225,34 @@ input[type="checkbox"]:checked + label {
 .completed {
   text-decoration: line-through;
 }
+
+@media screen and (max-width: 768px) {
+  .container {
+    padding-top: 5vh;
+  }
+
+  .todo-div {
+    width: 90vw;
+  }
+
+  .todo-input {
+    width: 70%;
+  }
+
+  .todo-button {
+    width: 30%;
+  }
+
+  .todo-item {
+    width: 100%;
+  }
+
+  .todo {
+    width: 100%;
+  }
+
+  .todo-item button {
+    width: 20%;
+  }
+  
+}
