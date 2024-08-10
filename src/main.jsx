@@ -4,7 +4,7 @@ import App from './App.jsx'
 import './index.css'
 
 createRoot(document.getElementById('root')).render(
-  // <StrictMode>
+  <BrowserRouter basename={process.env.PUBLIC_URL}>
     <App />
-  // </StrictMode>,
+  </BrowserRouter>
 )
