@@ -3,7 +3,10 @@ import { TodoMaker } from "./TodoMaker";
 import { TodoList } from "./TodoList";
 
 export const TodoDiv = () => {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(() => {
+    const todos = localStorage.getItem("todos");
+    return todos ? JSON.parse(todos) : [];
+  });
 
   const addTodo = (todo) => {
     setTodos([
@@ -12,9 +15,13 @@ export const TodoDiv = () => {
     ]);
   };
 
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
+
   const deleteTodo = (id) => {
     setTodos(todos.filter((todo) => todo.id !== id));
-  }
+  };
 
   return (
     <div className="todo-div">
@@ -22,11 +29,7 @@ export const TodoDiv = () => {
       <TodoMaker addTodo={addTodo} />
       <div className="todo-list">
         {todos.map((todo) => (
-          <TodoList
-            key={todo.id}
-            todo={todo}
-            deleteTodo={deleteTodo}
-          />
+          <TodoList key={todo.id} todo={todo} deleteTodo={deleteTodo} />
         ))}
       </div>
     </div>
