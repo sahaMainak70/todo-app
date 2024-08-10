@@ -254,6 +254,10 @@ input[type="checkbox"]:checked + label {
     width: 100%;
   }
 
+  .todo p {
+    margin-left: 2vw;
+  }
+
   .todo-item button {
     width: 20%;
   }
